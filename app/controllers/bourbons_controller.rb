@@ -23,16 +23,20 @@ end
     else
     @bourbon = Bourbon.find(params[:id])
   end
-end 
+end
 
   def new
-    @distillery = Distillery.new
+    if params[:distillery_id] && !Distillery.exists?(params[:distillery_id])
+    redirect_to distilleries_path, alert: 'Distillery not found.'
+      else
+    @bourbon = Bourbon.new(distillery_id: params[:distillery_id]) #will ignore if no params
   end
+end
 
   def create
-    @distillery = Distillery.new(distillery_params)
-    if @distillery.save
-      redirect_to @distillery
+    @bourbon = Bourbon.new(bourbon_params)
+    if @bourbon.save
+      redirect_to @bourbon
     else
      render :new
    end
