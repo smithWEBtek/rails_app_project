@@ -1,6 +1,6 @@
-class CreateBourbonTable < ActiveRecord::Migration[5.2]
+class CreateBourbons < ActiveRecord::Migration[5.2]
   def change
-    create_table :bourbon do |t|
+    create_table :bourbons do |t|
       t.string :name
       t.string :type
       t.integer :year

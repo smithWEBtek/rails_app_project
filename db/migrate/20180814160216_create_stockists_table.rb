@@ -1,4 +1,4 @@
-class CreateStockists < ActiveRecord::Migration[5.2]
+class CreateStockistsTable < ActiveRecord::Migration[5.2]
   def change
     create_table :stockists do |t|
       t.string :name
