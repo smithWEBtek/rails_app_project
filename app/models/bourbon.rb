@@ -1,4 +1,4 @@
-class Bourbon < ActiveRecord::Base
+class Bourbon < ApplicationRecord
 
   belongs_to :distillery
   has_many :bourbon_stockists

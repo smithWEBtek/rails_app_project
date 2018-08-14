@@ -1,0 +1,28 @@
+<%= form_for @bourbon do |f| %>
+
+
+< -- parent resource (distillery): -->
+
+<%= distillery_select(@bourbon.distillery, @bourbon) %>
+<%= f.label :name%>
+<%= f.text_field :name %><br>
+<%= f.label :type%>
+<%= f.text_field :type %><br>
+<%= f.label :year%>
+<%= f.text_field :year %><br>
+
+<%= f.label :distillery_name %>
+<%= f.text_field :distillery_name %>
+<br />
+
+
+< -- adding association data (stockists) -- >
+
+  <%= f.collection_check_boxes :stockist_ids, Stockist.all, :id, :name %>
+  <%= f.fields_for :stockists, bourbon.stockists.build do |stockists_fields| %>
+    <%= stockists_fields.text_field :name %>
+  <% end %>
+
+
+  <%= f.submit %>
+<% end %>
