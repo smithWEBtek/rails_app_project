@@ -1,0 +1,6 @@
+<h1><%= @distillery.name %></h1>
+<ul>
+<% @distillery.bourbons.each do |bourbon| %>
+<li><%= link_to bourbon.name, distillery_bourbon_path(@distillery, bourbon) %></li>
+<% end %>
+</ul>
