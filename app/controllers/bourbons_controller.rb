@@ -43,7 +43,18 @@ end
   end
 
   def edit
-    @distillery = Distillery.find(params[:id])
+    if params[:distillery_id]
+    @distillery = Distillery.find_by(params[:distillery_id])
+    if distillery.nil?
+      redirect_to distilleries_path, alert: 'Distillery not found.'
+    else
+      @bourbon = distillery.bourbons.find_by(id: params[:id])
+      redirect_to distillery_bourbons_path(distillery), alert: 'Bourbon not found.' if
+      @bourbon.nil?
+      end
+    else
+    @bourbon = Bourbon.find(params[:id])
+    end
   end
 
   def update
