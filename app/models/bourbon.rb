@@ -7,5 +7,14 @@ class Bourbon < ApplicationRecord
 
 #method for stockist count?
 
+def distillery_name
+    self.try(:distillery).try(:distillery)
+  end
+
+  def distillery_name=(name)
+    distillery = Distillery.find_or_create_by(name: name)
+    self.distillery = distillery
+  end
+
 
 end
