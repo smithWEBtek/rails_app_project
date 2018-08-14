@@ -3,26 +3,32 @@
 
 < -- parent resource (distillery): -->
 
-<%= distillery_select(@bourbon.distillery, @bourbon) %>
+<%= distillery_select(@bourbon.distillery, @bourbon) %> </br>
+or create new distillery:
+<%= f.label :distillery_name %>
+<%= f.text_field :distillery_name %>
+</br>
+
+</br>
 <%= f.label :name%>
 <%= f.text_field :name %><br>
 <%= f.label :type%>
 <%= f.text_field :type %><br>
 <%= f.label :year%>
 <%= f.text_field :year %><br>
+<%= f.label :description%>
+<%= f.text_field :description %></br>
 
-<%= f.label :distillery_name %>
-<%= f.text_field :distillery_name %>
-<br />
+</br>
 
-
-< -- adding association data (stockists) -- >
+< -- adding association data (stockists) -- > </br>
 
   <%= f.collection_check_boxes :stockist_ids, Stockist.all, :id, :name %>
-  <%= f.fields_for :stockists, bourbon.stockists.build do |stockists_fields| %>
+  <%= f.fields_for :stockists, @bourbon.stockists.build do |stockists_fields| %>
     <%= stockists_fields.text_field :name %>
   <% end %>
 
-
+</br>
+</br>
   <%= f.submit %>
 <% end %>
