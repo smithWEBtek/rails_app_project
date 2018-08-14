@@ -58,26 +58,27 @@ end
   end
 
   def update
-    @distillery = Distillery.find(params[:id])
-    @distillery.update(distillery_params)
-    if @distillery.save
-      redirect_to @distillery
+    @bourbon = Bourbon.find(params[:id])
+    @bourbon.update(bourbon_params)
+    if @bourbon.save
+      redirect_to @bourbon
     else
       render :edit
      end
   end
 
   def destroy
-    @distillery = Distillery.find(params[:id])
-    @distillery.destroy
-    flash[:notice] = "Distillery deleted"
-    redirect_to distilleries_path
+    @bourbon = Bourbon.find(params[:id])
+    @bourbon.destroy
+    flash[:notice] = "Bourbon deleted"
+    redirect_to bourbons_path
   end
 
   private
 
-  def distillery_params
-    params.require(:distillery).permit(:name, :address)
+  def bourbon_params
+    params.require(:bourbon).permit(:name, :year, :type, :description, :distillery_name, :distillery_id, stockist_ids:[],
+    stockists_attributes: [:name])
   end
 
 
