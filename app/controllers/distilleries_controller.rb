@@ -5,15 +5,24 @@ def index
 end
 
 def show
+  @distillery = Distillery.find(params[:id])
 end
 
 def new
+  @distillery = Distillery.new
 end
 
 def create
+  @distillery = Distillery.new(distillery_params)
+  if @distillery.save
+    redirect_to @distillery
+  else
+   render :new
+ end
 end
 
 def edit
+  @distillery = Distillery.find(params[:id])
 end
 
 def update
