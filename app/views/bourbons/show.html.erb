@@ -1,0 +1,20 @@
+<h1><%= link_to @bourbon.name, bourbon_path(@bourbon) %></h1>
+	<p><%= last_updated @bourbon %></p>
+
+<%= @bourbon.name %> <br>
+<h3> by <%= display_distillery(@distillery) %></h3>
+
+<%= @bourbon.year %> <br>
+<%= @bourbon.description %> <br>
+
+
+
+<h2>List of Stockists</h2>
+<% @bourbon.stockists.each do |stockist| %>
+
+<li><%= link_to stockist.name, stockist_path %></li>"
+<% end %>
+
+
+<%= link_to 'Edit Bourbon', edit_bourbon_path %> </br>
+<%= link_to 'All Bourbons', bourbons_path %>
