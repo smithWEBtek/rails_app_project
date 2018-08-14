@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
  resources :stockists
 
- root ‘bourbons#index’
+
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
