@@ -1,10 +1,10 @@
 <h1> Stockists Index </h1>
 
 
-<ul>
+
 <% @stockists.each do |stockist| %>
-<li> <%= link_to stockist.name, stockist_path(stockist) %></li>
+<%= link_to stockist.name, stockist_path(stockist) %></br>
 <% end %>
-</ul>
+
 <br>
 <%= link_to "Add New Stockist", new_stockist_path %>

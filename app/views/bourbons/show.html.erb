@@ -12,7 +12,7 @@ DESCRIPTION: <%= @bourbon.description %> <br>
 <h2>List of Stockists</h2>
 <% @bourbon.stockists.each do |stockist| %>
 
-<li><%= link_to stockist.name, stockist_path %></li>
+<li><%= link_to stockist.name, stockist_path(stockist) %></li>
 <% end %>
 
 </br>

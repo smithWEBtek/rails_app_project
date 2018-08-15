@@ -3,7 +3,7 @@
 
 <ul>
 <% @bourbons.each do |bourbon| %>
-<li><%= display_distillery(bourbon) %> - <%= link_to bourbon.name, bourbon_path(bourbon) %></li>
+ <li><%= display_distillery(bourbon) %>   -   <%= link_to bourbon.name, bourbon_path(bourbon) %></li>
 <% end %>
 </ul>
 <br>
