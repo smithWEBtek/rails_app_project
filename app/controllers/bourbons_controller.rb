@@ -77,7 +77,7 @@ end
   private
 
   def bourbon_params
-    params.require(:bourbon).permit(:name, :year, :type, :description, :distillery_name, :distillery_id, stockist_ids:[],
+    params.require(:bourbon).permit(:name, :year, :grain, :description, :distillery_name, :distillery_id, stockist_ids:[],
     stockists_attributes: [:name])
   end
 

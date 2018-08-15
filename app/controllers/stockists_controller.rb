@@ -46,7 +46,7 @@ class StockistsController < ApplicationController
 
   def stockist_params
     params.require(:stockist).permit(:name, :address, :email, :phone, bourbon_ids:[],
-      bourbons_attributes: [:name])
+      bourbons_attributes: [:name],[:year],[:grain],[:description])
   end
 
 

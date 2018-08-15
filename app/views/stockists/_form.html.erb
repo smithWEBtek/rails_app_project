@@ -18,7 +18,7 @@
 
   <%= f.collection_check_boxes :bourbon_ids, Bourbon.all, :id, :name %>
   <%= f.fields_for :bourbons, @stockist.bourbons.build do |bourbons_fields| %>
-    <%= bourbons_fields.text_field :name %>
+    <%= bourbons_fields.text_field :name, :year, :grain, :description %>
   <% end %>
 
 </br>
