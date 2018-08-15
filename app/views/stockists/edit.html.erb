@@ -1,2 +1,4 @@
 <h1>Editing <%= @stockist.name %></h1>
 <%= render partial: "form" %>
+</br>
+<%= link_to "Delete Stockist", @stockist, method: :delete, data: { confirm: "Really?" } %>

@@ -39,7 +39,7 @@ class StockistsController < ApplicationController
     @stockist = Stockist.find(params[:id])
     @stockist.destroy
     flash[:notice] = "Stockist deleted"
-    redirect_to Stockists_path
+    redirect_to stockists_path
   end
 
   private
@@ -47,7 +47,7 @@ class StockistsController < ApplicationController
   def stockist_params
     params.require(:stockist).permit(:name, :address, :email, :phone, bourbon_ids:[],
       bourbons_attributes: [:name, :year, :grain, :description])
-      
+
   end
 
 
