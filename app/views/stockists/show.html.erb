@@ -1,0 +1,17 @@
+
+
+<%= @stockist.name %> <br>
+<%= @stockist.address %> <br>
+<%= @stockist.email %> <br>
+<%= @stockist.phone %> <br>
+
+
+<h2>List of bourbons</h2>
+<% @stockist.bourbons.uniq.each do |bourbon| %>
+
+<li><%= link_to bourbon.name, bourbon_path %></li>"
+<% end %>
+
+
+<%= link_to 'Edit Stockist', edit_stockist_path %> </br>
+<%= link_to 'All Stockists', stockists_path %>

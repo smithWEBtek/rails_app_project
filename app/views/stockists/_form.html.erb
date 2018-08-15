@@ -1,0 +1,27 @@
+<%= form_for @stockist do |f| %>
+
+
+
+</br>
+<%= f.label :name%>
+<%= f.text_field :name %><br>
+<%= f.label :address%>
+<%= f.text_field :address %><br>
+<%= f.label :email%>
+<%= f.text_field :email %><br>
+<%= f.label :phone%>
+<%= f.text_field :phone %></br>
+
+</br>
+
+< -- adding association data (bourbons) -- > </br>
+
+  <%= f.collection_check_boxes :bourbon_ids, Bourbon.all, :id, :name %>
+  <%= f.fields_for :bourbons, @stockist.bourbons.build do |bourbons_fields| %>
+    <%= bourbons_fields.text_field :name %>
+  <% end %>
+
+</br>
+</br>
+  <%= f.submit %>
+<% end %>
