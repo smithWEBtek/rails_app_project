@@ -1,6 +1,6 @@
 <h1>Distilleries</h1>
 <ul>
 <% @distilleries.each do |distillery| %>
-<li><%= link_to distillery.name, distillery_bourbons_path(distillery) %></li>
+<li><%= link_to distillery.name, distillery_path(distillery) %></li>
 <% end %>
 </ul>
