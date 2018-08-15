@@ -12,5 +12,5 @@ module DistilleriesHelper
       select_tag "bourbon[distillery_id]", options_from_collection_for_select(Distillery.all, :id, :name)
     end
   end
-  
+
 end
