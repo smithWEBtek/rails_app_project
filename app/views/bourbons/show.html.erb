@@ -1,20 +1,20 @@
 
 
-<%= @bourbon.name %> <br>
-<h3> by <%= display_distillery(@distillery) %></h3>
+<h1><%= @bourbon.name %></h1> <br>
+<h3> by <%= @bourbon.distillery.name %></h3>
 
-<%= @bourbon.year %> <br>
-<%= @bourbon.grain %> <br>
-<%= @bourbon.description %> <br>
+YEAR: <%= @bourbon.year %> <br>
+GRAIN: <%= @bourbon.grain %> <br>
+DESCRIPTION: <%= @bourbon.description %> <br>
 
 
 
 <h2>List of Stockists</h2>
 <% @bourbon.stockists.each do |stockist| %>
 
-<li><%= link_to stockist.name, stockist_path %></li>"
+<li><%= link_to stockist.name, stockist_path %></li>
 <% end %>
 
-
+</br>
 <%= link_to 'Edit Bourbon', edit_bourbon_path %> </br>
 <%= link_to 'All Bourbons', bourbons_path %>
