@@ -1,13 +1,16 @@
 <%= form_for @bourbon do |f| %>
 
-
+ DISTILLERY:
+  <%= f.text_field :distillery_name, list: "distilleries_autocomplete" %>
+  <datalist id="distilleries_autocomplete">
+    <% Distillery.all.each do |distillery| %>
+      <option value="<%= distillery.name %>">
+    <% end %>
+  </datalist>
 
 </br>
-ENTER DISTILLERY HERE:
-<%= f.label :distillery_name%>
-<%= f.text_field :distillery_name %><br>
 </br>
-BOURBON DETAILS: 
+BOURBON DETAILS:</br>
 <%= f.label :name%>
 <%= f.text_field :name %><br>
 <%= f.label :grain%>
