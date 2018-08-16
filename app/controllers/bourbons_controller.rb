@@ -36,7 +36,7 @@ end
   def create
     @bourbon = Bourbon.new(bourbon_params)
     if @bourbon.save
-      redirect_to @bourbon
+      redirect_to bourbon_path(@bourbon)
     else
      render :new
    end

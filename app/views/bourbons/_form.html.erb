@@ -1,13 +1,13 @@
 <%= form_for @bourbon do |f| %>
 
 
-< -- parent resource (distillery): -->
-
-<%= distillery_select(@bourbon.distillery, @bourbon) %> </br>
 
 </br>
-
+ENTER DISTILLERY HERE:
+<%= f.label :distillery_name%>
+<%= f.text_field :distillery_name %><br>
 </br>
+BOURBON DETAILS: 
 <%= f.label :name%>
 <%= f.text_field :name %><br>
 <%= f.label :grain%>

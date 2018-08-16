@@ -9,7 +9,8 @@ class Bourbon < ApplicationRecord
 
 def distillery_name
     #self.try(:distillery).try(:distillery)
-    self.distillery.name
+    #self.distillery.name
+    self.distillery ? self.distillery.name : nil
   end
 
   def distillery_name=(name)
