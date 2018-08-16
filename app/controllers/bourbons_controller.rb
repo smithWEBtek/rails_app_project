@@ -30,6 +30,8 @@ end
     redirect_to distilleries_path, alert: 'Distillery not found.'
       else
     @bourbon = Bourbon.new(distillery_id: params[:distillery_id]) #will ignore if no params
+    @bourbon.stockists.build(name: 'name here')
+    
   end
 end
 
@@ -77,8 +79,8 @@ end
   private
 
   def bourbon_params
-    params.require(:bourbon).permit(:name, :year, :grain, :description, :distillery_name, :distillery_id, stockist_ids:[],
-    stockists_attributes: [:name])
+    params.require(:bourbon).permit(:name, :year, :grain, :description, :distillery_name, :distillery_id,
+      stockist_ids:[], stockists_attributes: [:name, :address])
   end
 
 
