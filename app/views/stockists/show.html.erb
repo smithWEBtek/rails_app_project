@@ -7,9 +7,9 @@
 
 
 <h2>List of bourbons at <%= @stockist.name %></h2>
-<% @stockist.bourbons.uniq.each do |bourbon| %> </br>
+<% @stockist.bourbons.each do |bourbon| %> </br>
 
-<li><%= link_to bourbon.name, bourbon_path %></li> </br>
+<li><%= link_to bourbon.name, bourbon_path(bourbon) %></li> </br>
 <% end %>
 
 </br>

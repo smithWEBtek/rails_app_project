@@ -23,7 +23,9 @@ or create new distillery:
 
 < -- adding association data (stockists) -- > </br>
 
-  <%= f.collection_check_boxes :stockist_ids, Stockist.all, :id, :name %>
+  <%= f.collection_check_boxes :stockist_ids, Stockist.all, :id, :name %> </br>
+  
+  or create new stockist:
   <%= f.fields_for :stockists, @bourbon.stockists.build do |stockists_fields| %>
     <%= stockists_fields.text_field :name %>
   <% end %>

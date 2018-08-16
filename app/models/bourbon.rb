@@ -8,7 +8,8 @@ class Bourbon < ApplicationRecord
 #method for stockist count?
 
 def distillery_name
-    self.try(:distillery).try(:distillery)
+    #self.try(:distillery).try(:distillery)
+    self.distillery.name
   end
 
   def distillery_name=(name)
