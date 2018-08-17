@@ -2,9 +2,9 @@
 <%= f.label :notes%>
 <%= f.text_field :notes %><br>
    Select Bourbon:
-  <%= f.collection_select :bourbon, Bourbon.all, :id, :name %>
+  <%= f.collection_select :bourbon_id, Bourbon.all, :id, :name %>
   Select Stockist:
-  <%= f.collection_select :stockist, Stockist.all, :id, :name %>
-  Submit Note: 
+  <%= f.collection_select :stockist_id, Stockist.all, :id, :name %>
+  Submit Note:
   <%= f.submit %>
 <% end %>
