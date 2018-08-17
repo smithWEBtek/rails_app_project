@@ -82,10 +82,6 @@ end
     params.require(:bourbon).permit(:name, :year, :grain, :description, :distillery_name, :distillery_id,
       stockist_ids:[], stockists_attributes: [:name])
   end
-  def post_params
-    params.require(:post).permit(:title, :content, category_ids:[], categories_attributes: [:name])
-  end
-
 
 
   end
