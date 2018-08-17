@@ -11,11 +11,13 @@ Rails.application.routes.draw do
 
  resources :stockists
 
-
+get '/bourbon_stockists/new' => 'bourbon_stockists#new'
+post '/bourbon_stockists' => 'bourbon_stockists#create'
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
 post '/logout' => 'sessions#destroy'
+
 
 resources :users, only: [:new, :create]
 end
