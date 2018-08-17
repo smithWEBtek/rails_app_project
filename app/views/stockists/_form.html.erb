@@ -17,17 +17,7 @@
 < -- adding association data (bourbons) -- > </br>
 
   <%= f.collection_check_boxes :bourbon_ids, Bourbon.all, :id, :name %> </br>
-  <h2> OR add new bourbon:</h2>
-  <%= f.fields_for :bourbons, @stockist.bourbons.build do |bourbons_fields| %>
-    <%= bourbons_fields.label :name%></br>
-    <%= bourbons_fields.text_field :name%></br>
-    <%= bourbons_fields.label :year%></br>
-    <%= bourbons_fields.text_field :year%></br>
-    <%= bourbons_fields.label :grain%></br>
-    <%= bourbons_fields.text_field :grain%></br>
-    <%= bourbons_fields.label :description%></br>
-    <%= bourbons_fields.text_field :description%></br>
-  <% end %>
+  
 
 </br>
 </br>

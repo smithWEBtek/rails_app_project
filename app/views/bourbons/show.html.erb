@@ -18,3 +18,12 @@ DESCRIPTION: <%= @bourbon.description %> <br>
 </br>
 <%= link_to 'Edit Bourbon', edit_bourbon_path %> </br>
 <%= link_to 'All Bourbons', bourbons_path %>
+
+</br>
+</br>
+Stockist Notes :
+</br>
+  <% @bourbon.bourbon_stockists.each do |bourbon_stockist| %>
+	<%= bourbon_stockist.stockist %>
+  <%= bourbon_stockist.notes %>
+  <% end %>
