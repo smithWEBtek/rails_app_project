@@ -1,8 +1,10 @@
 <%= form_for @bourbon_stockist do |f| %>
 <%= f.label :notes%>
 <%= f.text_field :notes %><br>
-
+   Select Bourbon:
   <%= f.collection_select :bourbon, Bourbon.all, :id, :name %>
+  Select Stockist:
   <%= f.collection_select :stockist, Stockist.all, :id, :name %>
+  Submit Note: 
   <%= f.submit %>
 <% end %>

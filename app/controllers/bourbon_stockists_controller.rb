@@ -1,11 +1,11 @@
-class Bourbon_Stockists_Controller < ApplicationController
+class BourbonStockistsController < ApplicationController
 
 def new
-  @bourbon_stockist = Bourbon_Stockist.new
+  @bourbon_stockist = BourbonStockist.new
 end
 
 def create
-  @bourbon_stockist = Bourbon_Stockist.new(bourbon_stockist_params)
+  @bourbon_stockist = BourbonStockist.new(bourbon_stockist_params)
   if @bourbon_stockist.save
     redirect_to @bourbon_stockist.bourbon
    else
@@ -20,3 +20,8 @@ def bourbon_stockist_params
 end
 
 end
+
+#def comment_params
+  #  params.require(:comment).permit
+  #(:content, :post_id, :user_id, user_attributes:[:username])
+  #end
