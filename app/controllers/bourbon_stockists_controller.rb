@@ -13,6 +13,11 @@ def create
    end
 end
 
+def index
+  @bourbon_stockists = BourbonStockist.all
+end
+
+
 private
 
 def bourbon_stockist_params
