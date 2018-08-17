@@ -32,13 +32,6 @@ Or create new stockist:
     <%= stockists_fields.text_field :name %>
   <% end %>
 
-  <h3>Add a Stock Note:</h3>
-<%= form_for @bourbon.bourbon_stockists.build do |f| %>
-  <%= f.label "Notes:" %>
-  <%= f.text_field :notes %>
-  <%= f.collection_select :stockist_id, Stockist.all, :id, :name, include_blank: 'Choose a Stockist' %>
-  <%= f.hidden_field :bourbon_id %>
-  <% end %>
-
+  
   <%= f.submit %>
 <% end %>
