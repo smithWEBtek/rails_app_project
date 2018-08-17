@@ -18,5 +18,12 @@ def distillery_name
     self.distillery = distillery
   end
 
+  def stockists_attributes=(stockist_attributes)
+    stockist_attributes.values.each do |stockist_attribute|
+      stockist = Stockist.find_or_create_by(stockist_attribute)
+      self.stockists << stockist
+    end
+  end
+
 
 end

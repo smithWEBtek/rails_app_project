@@ -31,7 +31,7 @@ end
       else
     @bourbon = Bourbon.new(distillery_id: params[:distillery_id]) #will ignore if no params
     @bourbon.stockists.build(name: 'name here')
-    
+
   end
 end
 
@@ -80,8 +80,12 @@ end
 
   def bourbon_params
     params.require(:bourbon).permit(:name, :year, :grain, :description, :distillery_name, :distillery_id,
-      stockist_ids:[], stockists_attributes: [:name, :address])
+      stockist_ids:[], stockists_attributes: [:name])
   end
+  def post_params
+    params.require(:post).permit(:title, :content, category_ids:[], categories_attributes: [:name])
+  end
+
 
 
   end

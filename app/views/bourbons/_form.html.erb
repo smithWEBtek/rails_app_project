@@ -26,7 +26,10 @@ BOURBON DETAILS:</br>
  Choose existing stockists: </br>
   <%= f.collection_check_boxes :stockist_ids, Stockist.all, :id, :name %> </br>
 </br>
+<%= f.fields_for :stockists, bourbon.stockists.build do |stockists_fields| %>
+    <%= stockists_fields.text_field :name %>
+  <% end %>
 
-  
+
   <%= f.submit %>
 <% end %>
