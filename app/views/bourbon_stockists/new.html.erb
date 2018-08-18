@@ -1,11 +1,2 @@
-<%= form_for @bourbon_stockist do |f| %>
-
-   Select Bourbon:
-  <%= f.collection_select :bourbon_id, Bourbon.all, :id, :name %> </br>
-  Select Stockist:
-  <%= f.collection_select :stockist_id, Stockist.all, :id, :name %></br>
-  <%= f.label :notes%>
-  <%= f.text_field :notes %><br>
-
-  <%= f.submit 'submit' %>
-<% end %>
+<h1>Create a New Note </h1>
+<%= render partial: "form" %>
