@@ -10,9 +10,13 @@ class BourbonStockist < ApplicationRecord
       self.stockist ? self.stockist.name : nil
     end
 
+    
+
     def stockist_name=(name)
       stockist = Stockist.find_or_create_by(name: name)
       self.stockist = stockist
     end
+
+
 
 end
