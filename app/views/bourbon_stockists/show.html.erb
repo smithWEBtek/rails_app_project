@@ -1,0 +1,15 @@
+
+Notes for
+<h1><%= @bourbon_stockist.bourbon %></h1>
+
+from:
+
+<h2><%= @bourbon_stockist.stockist_name %> </h2></br>
+  <h2><%= @bourbon_stockist.notes %> </h2></br>
+
+</br>
+<%= link_to @bourbon_stockist.bourbon, bourbon_path(@bourbon_stockist.bourbon %> </br>
+</br>
+<%= link_to 'Edit Note', edit_bourbon_stockists_path %> </br>
+</br>
+<%= link_to @bourbon_stockist.stockist_name, stockist_path(@bourbon_stockist.stockist) %>

@@ -11,9 +11,11 @@ Rails.application.routes.draw do
 
  resources :stockists
 
-get '/bourbon_stockists/new' => 'bourbon_stockists#new'
-post '/bourbon_stockists' => 'bourbon_stockists#create'
-get '/bourbon_stockists' => 'bourbon_stockists#index'
+ resources :bourbon_stockists
+
+#get '/bourbon_stockists/new' => 'bourbon_stockists#new'
+#post '/bourbon_stockists' => 'bourbon_stockists#create'
+#get '/bourbon_stockists' => 'bourbon_stockists#index'
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'

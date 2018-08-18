@@ -21,6 +21,9 @@ def edit
   @bourbon_stockist = BourbonStockist.find(params[:id])
 end
 
+def show
+  @bourbon_stockist = BourbonStockist.find(params[:id])
+end
 
 def update
   @bourbon_stockist = BourbonStockist.find(params[:id])
