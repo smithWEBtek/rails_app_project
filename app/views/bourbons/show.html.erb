@@ -25,7 +25,7 @@ DESCRIPTION: <%= @bourbon.description %> <br>
 Stockist Notes :
 </br>
   <% @bourbon.bourbon_stockists.each do |bourbon_stockist| %>
-	<%= bourbon_stockist.stockist %> -
+	<%= bourbon_stockist.stockist_name %> -
   " <%= bourbon_stockist.notes %> " </br>
-  
+
   <% end %>
