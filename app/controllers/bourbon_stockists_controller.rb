@@ -2,7 +2,9 @@ class BourbonStockistsController < ApplicationController
 
 def new
   @bourbon_stockist = BourbonStockist.new
+  
 end
+
 
 def create
   @bourbon_stockist = BourbonStockist.new(bourbon_stockist_params)
