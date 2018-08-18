@@ -4,7 +4,9 @@ class Stockist < ApplicationRecord
   has_many :bourbons, through: :bourbon_stockists
 
   accepts_nested_attributes_for :bourbons
-  validates :name, presence: true
+  accepts_nested_attributes_for :bourbon_stockists
+
+  #validates :name, presence: true
 
 
 end

@@ -24,14 +24,18 @@ BOURBON DETAILS:</br>
 
 < -- adding association data (stockists) -- > </br>
  Choose existing stockists: </br>
-  <%= f.collection_check_boxes :stockist_ids, Stockist.all, :id, :name %> </br>
+  <%= f.collection_check_boxes :stockists, Stockist.all, :id, :name %> </br>
 </br>
 
-Or create new stockist:
-<%= f.fields_for :stockists, @bourbon.stockists.build do |stockists_fields| %>
-    <%= stockists_fields.text_field :name %>
-  <% end %>
+or create new stockist:
+    <% f.fields_for :stockist do |stockist_form| %>
+        <%= stockist_form.label :name, "Stockist Name" %>
+        <%= stockist_form.text_field :name %>
+        <%= stockist_form.label :address, "Address " %>
+        <%= stockist_form.text_field :address %>
+    <% end %>
 
-  
-  <%= f.submit %>
+</br>
+
+<%= f.submit %>
 <% end %>

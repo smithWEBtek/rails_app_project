@@ -30,6 +30,7 @@ end
     redirect_to distilleries_path, alert: 'Distillery not found.'
       else
     @bourbon = Bourbon.new(distillery_id: params[:distillery_id]) #will ignore if no params
+    @bourbon.bourbon_stockists.build
     @bourbon.stockists.build(name: 'name here')
 
   end
