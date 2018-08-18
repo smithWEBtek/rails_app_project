@@ -27,15 +27,7 @@ BOURBON DETAILS:</br>
   <%= f.collection_check_boxes :stockist_ids, Stockist.all, :id, :name %> </br>
 </br>
 
-or create new stockist:
-    <% f.fields_for :stockist do |stockist_form| %>
-        <%= stockist_form.label :name, "Stockist Name" %>
-        <%= stockist_form.text_field :name %>
-        <%= stockist_form.label :address, "Address " %>
-        <%= stockist_form.text_field :address %>
-    <% end %>
 
-</br>
 
 <%= f.submit %>
 <% end %>
