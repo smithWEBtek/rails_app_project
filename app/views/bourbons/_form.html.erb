@@ -24,7 +24,7 @@ BOURBON DETAILS:</br>
 
 < -- adding association data (stockists) -- > </br>
  Choose existing stockists: </br>
-  <%= f.collection_check_boxes :stockists, Stockist.all, :id, :name %> </br>
+  <%= f.collection_check_boxes :stockist_ids, Stockist.all, :id, :name %> </br>
 </br>
 
 or create new stockist:
