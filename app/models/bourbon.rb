@@ -1,10 +1,14 @@
 class Bourbon < ApplicationRecord
 
+
   belongs_to :distillery
   has_many :bourbon_stockists
   has_many :stockists, through: :bourbon_stockists
   #accepts_nested_attributes_for :stockists
   accepts_nested_attributes_for :bourbon_stockists
+
+  validates :lage, format: { without: /\A[a-zA-Z]+\z/,
+    message: "only allows numbers" }
 
 #method for stockist count?
 
