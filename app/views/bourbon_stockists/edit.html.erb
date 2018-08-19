@@ -10,5 +10,12 @@
 
   <%= f.submit 'submit' %>
 <% end %>
-
+</br>
 <%= link_to "Delete Note", @bourbon_stockist, method: :delete, data: { confirm: "Really?" } %>
+</br>
+<br>
+<%= link_to "Notes Index", bourbon_stockists_path %> </br>
+</br>
+<%= link_to "Distillery Index List", distilleries_path %> </br>
+<%= link_to "Stockist Index List", stockists_path %></br>
+<%= link_to "Bourbon Index List", bourbons_path %>

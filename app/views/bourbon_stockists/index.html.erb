@@ -4,6 +4,15 @@
 
 <% @bourbon_stockists.each do |bourbon_stockist| %>
 <%= bourbon_stockist.notes %></br>
+<%= bourbon_stockist.bourbon.name%></br>
+<%= bourbon_stockist.stockist_name%></br>
+<%= link_to "Edit Note", edit_bourbon_stockist_path(bourbon_stockist) %> </br>
+</br>
 <% end %>
 
 <br>
+<%= link_to "Add New Note", new_bourbon_stockist_path %> </br>
+</br>
+<%= link_to "Distillery Index List", distilleries_path %> </br>
+<%= link_to "Stockist Index List", stockists_path %></br>
+<%= link_to "Bourbon Index List", bourbons_path %>
