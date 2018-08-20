@@ -3,11 +3,12 @@ class SessionsController < ApplicationController
 
   def new
     @user= User.new
+    #@user = User.find_by(username: params[:username])
   end
 
   def create
-    @user = User.find_by(username: params[:username])
-    @user = @user.try(:authenticate, params[:password])
+    @user = User.find_by(username: params[:user][:username])
+    @user = @user.try(:authenticate, params[:user][:password])
     return redirect_to(controller: 'sessions', action: 'new') unless @user
 
     session[:user_id] = @user.id
@@ -18,7 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete :user_id
-    redirect_to controller: 'welcome', action: 'hello'
+    redirect_to controller: 'welcome', action: 'home'
   end
 
 end

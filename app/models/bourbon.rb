@@ -7,7 +7,7 @@ class Bourbon < ApplicationRecord
   #accepts_nested_attributes_for :stockists
   accepts_nested_attributes_for :bourbon_stockists
 
-  validates :lage, format: { without: /\A[a-zA-Z]+\z/,
+  validates :age, format: { without: /\A[a-zA-Z]+\z/,
     message: "only allows numbers" }
 
 #method for stockist count?
