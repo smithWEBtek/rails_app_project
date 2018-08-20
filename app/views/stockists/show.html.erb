@@ -4,6 +4,8 @@
 <%= @stockist.address %> <br>
 <%= @stockist.email %> <br>
 <%= @stockist.phone %> <br>
+</br>
+(<%= @stockist.bourbon_count %> <%= "bourbon".pluralize(@stockist.bourbon_count) %>) in stock
 
 
 <h2>List of bourbons at <%= @stockist.name %></h2>

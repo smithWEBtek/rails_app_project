@@ -6,7 +6,11 @@ class Stockist < ApplicationRecord
   accepts_nested_attributes_for :bourbons
   accepts_nested_attributes_for :bourbon_stockists
 
-  #validates :name, presence: true
+  validates :name, presence: true
+
+  def bourbon_count
+    self.bourbons.size
+  end 
 
 
 end
