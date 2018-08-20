@@ -9,13 +9,14 @@ class SessionsController < ApplicationController
   def create
     if auth
           @user = User.find_or_create_by(uid: auth['uid']) do |u|
-            u.name = auth['info']['name']
+            u.username = auth['info']['name']
             u.email = auth['info']['email']
             u.image = auth['info']['image']
             u.password = auth[:uid]
           end
+          
           session[:user_id] = @user.id
-          redirect_to user_path(@user)
+          redirect_to welcome_path
     else
     @user = User.find_by(username: params[:user][:username])
     @user = @user.try(:authenticate, params[:user][:password])
