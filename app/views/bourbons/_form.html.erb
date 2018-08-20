@@ -1,3 +1,21 @@
+
+<% if @bourbon.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@bourbon.errors.count, "error") %>
+      prohibited this bourbon from being saved:
+    </h2>
+
+    <ul>
+    <% @bourbon.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
 <%= form_for @bourbon do |f| %>
 
  DISTILLERY:
