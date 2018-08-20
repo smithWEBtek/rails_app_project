@@ -25,6 +25,8 @@ post '/login' => 'sessions#create'
 get '/logout' => 'sessions#destroy'
 post '/logout' => 'sessions#destroy'  #do you need this route?
 
+get '/auth/facebook/callback' => 'sessions#create'
+
 get '/welcome' => 'welcome#home'
 
 #get '/signup'  => 'users#new'

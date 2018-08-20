@@ -1,6 +1,13 @@
 
-Welcome <%= @user.username %>! </br>
+Welcome..... <%= @user.username %>! </br>
 </br>
+<h1><%= @user.name %></h1>
+<h2>Email: <%= @user.email %></h2>
+<h2>Facebook UID: <%= @user.uid %></h2>
+<img src="<%= @user.image %>">
+
+
+
 <%= link_to "Bourbons Index List", bourbons_path %> </br>
 <%= link_to "Stockists Index List", stockists_path %></br>
 <%= link_to "Distilleries Index List", distilleries_path %></br>
