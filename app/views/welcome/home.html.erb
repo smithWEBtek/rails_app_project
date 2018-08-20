@@ -1,13 +1,16 @@
 
 Welcome <%= @user.username %>! </br>
 
-<h4>Email: <%= @user.email %></h4>
-<h4>Facebook UID: <%= @user.uid %></h4>
+<h4><%= @user.email %></h4>
+<h4><%= @user.uid %></h4>
 <img src="<%= @user.image %>"> </br>
 </br>
 </br>
 <%= link_to "Bourbons Index List", bourbons_path %> </br>
+</br>
 <%= link_to "Stockists Index List", stockists_path %></br>
+</br>
 <%= link_to "Distilleries Index List", distilleries_path %></br>
+</br>
 </br>
 <%= link_to "Log Out", logout_path %></br>

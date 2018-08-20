@@ -14,6 +14,10 @@ class Bourbon < ApplicationRecord
   validates :age, numericality: true
 #method for stockist count?
 
+scope :rare, -> { where(age: '25') }
+
+
+
 def distillery_name
     #self.try(:distillery).try(:distillery)
     #self.distillery.name
