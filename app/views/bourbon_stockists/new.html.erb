@@ -1,33 +1,3 @@
 
-<% if @bourbon_stockist.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@bourbon_stockist.errors.count, "error") %>
-      prohibited this note from being saved:
-    </h2>
-
-    <ul>
-    <% @bourbon_stockist.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
-
-
-
-
-
 <h1>Create a New Note </h1>
-<%= form_for @bourbon_stockist do |f| %>
-
-   Select Bourbon:
-  <%= f.collection_select :bourbon_id, Bourbon.all, :id, :name %> </br>
-  Select Stockist:
-  <%= f.collection_select :stockist_id, Stockist.all, :id, :name %></br>
-  <%= f.label :notes%>
-  <%= f.text_field :notes %><br>
-
-  <%= f.submit 'submit' %>
-<% end %>
+<%= render partial: "form" %>
