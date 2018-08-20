@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_010934) do
+ActiveRecord::Schema.define(version: 2018_08_20_163647) do
 
   create_table "bourbon_stockists", force: :cascade do |t|
     t.text "notes"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_08_15_010934) do
   create_table "bourbons", force: :cascade do |t|
     t.string "name"
     t.string "grain"
-    t.integer "year"
+    t.integer "age"
     t.string "description"
     t.integer "distillery_id"
   end
