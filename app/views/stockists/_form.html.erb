@@ -14,8 +14,7 @@
 
 </br>
 
-< -- adding association data (bourbons) -- > </br>
-  ability for stockist to add note for each bourbon? 
+
   <%= f.collection_check_boxes :bourbon_ids, Bourbon.all, :id, :name %> </br>
 
 
@@ -23,3 +22,9 @@
 </br>
   <%= f.submit %>
 <% end %>
+</br>
+<%= link_to 'All Bourbons', bourbons_path %> </br>
+</br>
+<%= link_to 'All Stockists', stockists_path %> </br>
+</br>
+<%= link_to 'All Distilleries', distilleries_path %>
