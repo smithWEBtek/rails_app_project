@@ -1,6 +1,8 @@
 class BourbonStockistsController < ApplicationController
   before_action :require_logged_in
 
+  helper :all
+
 def new
   @bourbon_stockist = BourbonStockist.new
 
