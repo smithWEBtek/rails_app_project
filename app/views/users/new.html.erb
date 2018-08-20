@@ -1,3 +1,4 @@
+<h1> Sign Up </h1>
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -14,18 +15,20 @@
   </div>
 <% end %>
 
-
-
-
 <%= form_for @user do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
-
+  </br>
   <%= f.label :password %>
   <%= f.password_field :password %>
-
+</br>
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
-
-  <%= f.submit "create" %>
+</br>
+  <%= f.submit "Sign Up" %>
 <% end %>
+</br>
+</br>
+</br>
+<h3> Already have an account?</h3>
+<%= link_to 'log in to your account here', login_path %>
