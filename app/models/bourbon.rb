@@ -7,9 +7,11 @@ class Bourbon < ApplicationRecord
   #accepts_nested_attributes_for :stockists
   accepts_nested_attributes_for :bourbon_stockists
 
-  validates :age, format: { without: /\A[a-zA-Z]+\z/,
-    message: "only allows numbers" }
-
+  validates :name, presence: true
+  #validates :age, format: { without: /\A[a-zA-Z]+\z/,
+    #message: "only allows numbers" }
+  #validates :age, presence: true, format: { with: /\A\d+\z/}
+  validates :age, numericality: true
 #method for stockist count?
 
 def distillery_name
