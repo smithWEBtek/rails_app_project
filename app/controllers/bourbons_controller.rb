@@ -40,12 +40,14 @@ end
 
   def create
     @bourbon = Bourbon.new(bourbon_params)
-    if @bourbon.save
+    if @bourbon.valid?
+      @bourbon.save
       redirect_to bourbon_path(@bourbon)
     else
      render :new
    end
   end
+
 
   def edit
     if params[:distillery_id]
@@ -82,7 +84,7 @@ end
   private
 
   def bourbon_params
-    params.require(:bourbon).permit(:name, :year, :grain, :description, :stockists, :distillery_name, :distillery_id,
+    params.require(:bourbon).permit(:name, :age, :grain, :description, :stockists, :distillery_name, :distillery_id,
       stockist_ids:[], stockists_attributes: [:name], bourbon_stockist_attributes: [:notes])
   end
 
