@@ -12,5 +12,12 @@ class Stockist < ApplicationRecord
     self.bourbons.size
   end 
 
+  def bourbons_attributes=(bourbon_attributes)
+    bourbon_attributes.values.each do |bourbon_attribute|
+      bourbon = Bourbon.find_or_create_by(bourbon_attribute)
+      self.bourbons << bourbon
+    end
+  end
+
 
 end
