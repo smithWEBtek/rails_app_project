@@ -4,7 +4,7 @@ class Bourbon < ApplicationRecord
   has_many :bourbon_stockists
   has_many :stockists, through: :bourbon_stockists
   accepts_nested_attributes_for :stockists
-  accepts_nested_attributes_for :bourbon_stockists
+
 
   validates :name, presence: true
   #validates :age, format: { without: /\A[a-zA-Z]+\z/,
