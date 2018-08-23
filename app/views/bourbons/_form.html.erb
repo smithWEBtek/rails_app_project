@@ -45,8 +45,15 @@ BOURBON DETAILS:</br>
 </br>
 or create new stockist:
 <%= f.fields_for :stockists, @bourbon.stockists.build do |stockists_fields| %>
+    <%= stockists_fields.label :name %>
     <%= stockists_fields.text_field :name %>
+    <%= stockists_fields.label :address %>
+    <%= stockists_fields.text_field :address %>
+    <%= stockists_fields.label :email %>
+    <%= stockists_fields.text_field :email %>
+    <%= stockists_fields.label :phone %>
+    <%= stockists_fields.text_field :phone %>
 <% end %>
-
+</br>
 <%= f.submit %>
 <% end %>
