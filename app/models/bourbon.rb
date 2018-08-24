@@ -12,9 +12,13 @@ class Bourbon < ApplicationRecord
 
 
   accepts_nested_attributes_for :stockists,
-   allow_destroy: true,
-  :reject_if => :all_blank?
 
+
+  reject_if: :name_blank, allow_destroy: true
+
+    def name_blank(a)
+      valid? && a[:id].blank? && a[:value].blank?
+    end
 
 def distillery_name
     #self.try(:distillery).try(:distillery)
