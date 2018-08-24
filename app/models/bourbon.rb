@@ -12,13 +12,23 @@ class Bourbon < ApplicationRecord
 
 
   accepts_nested_attributes_for :stockists,
+  :reject_if => proc { |att| att['name'].blank? },
+  :allow_destroy => true
+
+  before_save :mark_children_for_removal
+  #reject_if: :name_blank, allow_destroy: true
+
+    #def name_blank(a)
+      #valid? && a[:id].blank? && a[:value].blank?
+    #end
 
 
-  reject_if: :name_blank, allow_destroy: true
 
-    def name_blank(a)
-      valid? && a[:id].blank? && a[:value].blank?
-    end
+def mark_children_for_removal
+  stockists.each do |stockist|
+    stockist.mark_for_destruction if stockist.name.blank?
+  end
+end
 
 def distillery_name
     #self.try(:distillery).try(:distillery)
