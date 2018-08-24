@@ -4,16 +4,13 @@ class Bourbon < ApplicationRecord
   has_many :bourbon_stockists
   has_many :stockists, through: :bourbon_stockists
 
-  accepts_nested_attributes_for :stockists,
-  :reject_if => proc {|attributes|
-    attributes.all? {|k,v| v.blank?}
-  }
 
   validates :name, presence: true
   validates :age, numericality: true
 
   scope :rare, -> { where(age: '25') }
 
+  accepts_nested_attributes_for :stockists, :reject_if => :all_blank?
 
 
 def distillery_name
