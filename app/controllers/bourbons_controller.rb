@@ -83,6 +83,10 @@ end
     redirect_to bourbons_path
   end
 
+  def rare
+    Bourbon.rare
+  end
+
   private
 
   def bourbon_params

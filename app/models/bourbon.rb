@@ -8,7 +8,7 @@ class Bourbon < ApplicationRecord
   validates :name, presence: true
   validates :age, numericality: true
 
-  scope :rare, -> { where(age: '25') }
+  scope :rare, -> { where("age = 25") }
 
 
   accepts_nested_attributes_for :stockists,
@@ -20,6 +20,10 @@ class Bourbon < ApplicationRecord
 
     #def name_blank(a)
       #valid? && a[:id].blank? && a[:value].blank?
+    #end
+
+    #def self.rare
+      #where("age: 25")
     #end
 
 
