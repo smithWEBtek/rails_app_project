@@ -17,6 +17,7 @@ root 'home#index'
  resources :bourbon_stockists
 
  get '/rare' => 'bourbons#rare'
+ get '/oldest' =>'bourbons#oldest'
 
 #get '/bourbon_stockists/new' => 'bourbon_stockists#new'
 #post '/bourbon_stockists' => 'bourbon_stockists#create'

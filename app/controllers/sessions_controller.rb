@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
             u.image = auth['info']['image']
             u.password = auth[:uid]
           end
-          
+
           session[:user_id] = @user.id
           redirect_to welcome_path
     else

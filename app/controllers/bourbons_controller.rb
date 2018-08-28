@@ -4,6 +4,12 @@ before_action :require_logged_in
 helper :all
 
 
+def oldest
+  @bourbons = Bourbon.oldest
+end
+
+
+
   def index
     if params[:distillery_id]
       @distillery = Distillery.find_by(id: params[:distillery_id])
@@ -83,9 +89,7 @@ end
     redirect_to bourbons_path
   end
 
-  def rare
-    Bourbon.rare
-  end
+
 
   private
 
