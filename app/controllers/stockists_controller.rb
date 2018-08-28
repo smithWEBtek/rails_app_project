@@ -1,12 +1,13 @@
 class StockistsController < ApplicationController
   before_action :require_logged_in
+  before_action :find_stockist, except: [:index, :new, :create]
+
 
   def index
     @stockists = Stockist.all
   end
 
   def show
-    @stockist = Stockist.find(params[:id])
   end
 
   def new
@@ -23,11 +24,9 @@ class StockistsController < ApplicationController
   end
 
   def edit
-    @stockist = Stockist.find(params[:id])
   end
 
   def update
-    @stockist = Stockist.find(params[:id])
     @stockist.update(stockist_params)
     if @stockist.save
       redirect_to @stockist
@@ -37,7 +36,6 @@ class StockistsController < ApplicationController
   end
 
   def destroy
-    @stockist = Stockist.find(params[:id])
     @stockist.destroy
     flash[:notice] = "Stockist deleted"
     redirect_to stockists_path
@@ -49,5 +47,8 @@ class StockistsController < ApplicationController
     params.require(:stockist).permit(:name, :address, :email, :phone, :bourbon_ids => [])
   end
 
+  def find_stockist
+    @stockist = Stockist.find(params[:id])
+  end 
 
   end

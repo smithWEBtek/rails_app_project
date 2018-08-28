@@ -1,5 +1,6 @@
 class BourbonStockistsController < ApplicationController
   before_action :require_logged_in
+  before_action :find_bourbon_stockist, except: [:index, :new, :create]
 
   helper :all
 
@@ -23,15 +24,12 @@ def index
 end
 
 def edit
-  @bourbon_stockist = BourbonStockist.find(params[:id])
 end
 
 def show
-  @bourbon_stockist = BourbonStockist.find(params[:id])
 end
 
 def update
-  @bourbon_stockist = BourbonStockist.find(params[:id])
   @bourbon_stockist.update(bourbon_stockist_params)
   if @bourbon_stockist.save
     redirect_to @bourbon_stockist
@@ -41,7 +39,6 @@ def update
 end
 
   def destroy
-    @bourbon_stockist = BourbonStockist.find(params[:id])
     @bourbon_stockist.destroy
     flash[:notice] = "Note deleted"
     redirect_to bourbons_path
@@ -55,6 +52,10 @@ private
 
 def bourbon_stockist_params
    params.require(:bourbon_stockist).permit(:notes, :bourbon_id, :stockist_id)
+end
+
+def find_bourbon_stockist
+  @bourbon_stockist = BourbonStockist.find(params[:id])
 end
 
 end

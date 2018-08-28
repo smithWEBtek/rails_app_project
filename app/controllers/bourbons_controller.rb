@@ -1,6 +1,6 @@
 class BourbonsController < ApplicationController
 before_action :require_logged_in
-
+before_action :find_bourbon, except: [:index, :oldest, :new, :create, :edit]
 helper :all
 
 
@@ -73,7 +73,6 @@ end
   end
 
   def update
-    @bourbon = Bourbon.find(params[:id])
     @bourbon.update(bourbon_params)
     if @bourbon.save
       redirect_to @bourbon
@@ -83,7 +82,6 @@ end
   end
 
   def destroy
-    @bourbon = Bourbon.find(params[:id])
     @bourbon.destroy
     flash[:notice] = "Bourbon deleted"
     redirect_to bourbons_path
@@ -99,5 +97,8 @@ end
       :stockists, stockist_ids:[], stockists_attributes: [:name, :address, :email, :phone])
   end
 
+  def find_bourbon
+      @bourbon = Bourbon.find(params[:id])
+    end
 
   end

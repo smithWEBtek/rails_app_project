@@ -1,6 +1,6 @@
 class DistilleriesController < ApplicationController
   before_action :require_logged_in
-
+  before_action :find_distillery, except: [:index, :new, :create]
   helper :all
 
 def index
@@ -8,7 +8,6 @@ def index
 end
 
 def show
-  @distillery = Distillery.find(params[:id])
 end
 
 def new
@@ -25,11 +24,10 @@ def create
 end
 
 def edit
-  @distillery = Distillery.find(params[:id])
+
 end
 
 def update
-  @distillery = Distillery.find(params[:id])
   @distillery.update(distillery_params)
   if @distillery.save
     redirect_to @distillery
@@ -39,7 +37,6 @@ def update
 end
 
 def destroy
-  @distillery = Distillery.find(params[:id])
   @distillery.destroy
   flash[:notice] = "Distillery deleted"
   redirect_to distilleries_path
@@ -51,5 +48,8 @@ def distillery_params
   params.require(:distillery).permit(:name, :address)
 end
 
+def find_distillery
+  @distillery = Distillery.find(params[:id])
+end
 
 end
