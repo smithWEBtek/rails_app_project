@@ -6,6 +6,7 @@ ruby '2.3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
+gem 'jquery-rails'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -29,8 +30,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'active_model_serializers'
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 
