@@ -17,8 +17,24 @@ $("a.load_bourbons").on("click", function(e) {
 //})
 //})
 
-$.get(this.href).success(function(response){
-  $("div.bourbons").html(response)
+//jquery:
+//$.get(this.href).success(function(response){
+  //$("div.bourbons").html(response)
+//})
+//e.preventDefault();
+//})
+//})
+
+//json:
+
+$.get(this.href).success(function(json){
+  //clear the ol html in case
+  var $ol = $("div.bourbons ol")
+    $ol.html("") //emptied
+    json.forEach(function(bourbon){
+      $ol.append("<li>" + bourbon.name + "</li>");
+    })
+
 })
 e.preventDefault();
 })
