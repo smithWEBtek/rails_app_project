@@ -17,7 +17,8 @@ end
            redirect_to distilleries_path, alert: "Distillery not found"
          else
            @bourbons = @distillery.bourbons #nested resource route
-           render 'bourbons/index', :layout => false
+           #render 'bourbons/index', :layout => false
+           render :json => @bourbons
          end
     else
     @bourbons = Bourbon.all
