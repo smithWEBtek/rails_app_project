@@ -5,14 +5,21 @@ $(document).ready(function(){
 
 $("a.load_bourbons").on("click", function(e) {
 //fire some ajax
-$.ajax({
-  method: "GET",
-  url:
-}).success(function(data){
+//$.ajax({
+  //method: "GET",
+//  url: this.href
+//}).done(function(response){
 
-  console.log(data)
-});
+  //$("div.comments").html(response)
+//});
 
-  e.preventDefault();
+  //e.preventDefault();
+//})
+//})
+
+$.get(this.href).success(function(response){
+  $("div.bourbons").html(response)
+})
+e.preventDefault();
 })
 })
