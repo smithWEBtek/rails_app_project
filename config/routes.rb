@@ -23,6 +23,9 @@ root 'home#index'
 #post '/bourbon_stockists' => 'bourbon_stockists#create'
 #get '/bourbon_stockists' => 'bourbon_stockists#index'
 
+
+  get 'bourbons/:id/bourbon_data', to: 'bourbons#bourbon_data'
+
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
 get '/logout' => 'sessions#destroy'

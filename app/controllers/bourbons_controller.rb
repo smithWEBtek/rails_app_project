@@ -25,6 +25,7 @@ end
   end
 end
 
+
   def show
     if params[:distillery_id]
       @distillery = Distillery.find_by(id: params[:distillery_id])
@@ -36,6 +37,12 @@ end
     @bourbon = Bourbon.find(params[:id])
   end
 end
+
+
+def bourbon_data
+    bourbon = Bourbon.find(params[:id])
+    render json: BourbonSerializer.serialize(bourbon)
+  end
 
   def new
     if params[:distillery_id] && !Distillery.exists?(params[:distillery_id])
