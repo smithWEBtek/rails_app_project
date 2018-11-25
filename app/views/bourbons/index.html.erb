@@ -4,21 +4,18 @@
   <tr>
     <th>Distillery</th>
     <th>Bourbon</th>
+    <th>Description</th>
   </tr>
 
 <% @bourbons.each do |bourbon| %>
 <tr>
 <td><%= display_distillery(bourbon) %> </td>
 <td><%=link_to bourbon.name, bourbon_path(bourbon) %></td>
-<div id="body-<%= bourbon.id %>"><%= truncate bourbon.description %></div>
-<button class="js-more" data-id="<%= bourbon.id %>">More...</button>
+<td><div id="body-<%= bourbon.id %>"><%= truncate bourbon.description %></div></td>
+<td><button class="js-more" data-id="<%= bourbon.id %>">More...</button></td>
 </tr>
 <% end %>
 </table>
-
-
-
-
 
 
 <br>
@@ -29,3 +26,15 @@
 </br>
 <%= link_to "Distillery Index List", distilleries_path %> </br>
 <%= link_to "Stockist Index List", stockists_path %>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-more").on('click', function() {
+    var id = $(this).data("id");
+    $.getJSON("/bourbons/" + id + "/bourbon_data", function(data) {
+      // Replace text of body-id div
+      $("#body-" + id).html(data["description"]);
+    });
+  });
+});
+</script>
