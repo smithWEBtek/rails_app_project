@@ -10,9 +10,17 @@
 <tr>
 <td><%= display_distillery(bourbon) %> </td>
 <td><%=link_to bourbon.name, bourbon_path(bourbon) %></td>
+<div id="body-<%= bourbon.id %>"><%= truncate bourbon.description %></div>
+<button class="js-more" data-id="<%= bourbon.id %>">More...</button>
 </tr>
 <% end %>
 </table>
+
+
+
+
+
+
 <br>
 </br>
 <%= link_to "Add New Bourbon", new_bourbon_path %> </br>
