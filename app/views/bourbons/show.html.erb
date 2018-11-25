@@ -1,6 +1,7 @@
 
 <h1><%= @bourbon.name %></h1>
-<h3> by <%= @bourbon.distillery_name%></h3>
+<h3><div class="distilleryName"> by <%= @bourbon.distillery_name %></div> </h3>
+
 
 AGE: <%= @bourbon.age %> <br>
 GRAIN: <%= @bourbon.grain %> <br>
@@ -30,3 +31,23 @@ Stockist Notes :
 </br>
 <%= link_to 'Edit Bourbon', edit_bourbon_path %> </br>
 <%= link_to 'All Bourbons', bourbons_path %> </br>
+
+<div class="distilleryName"><%= @bourbon.distillery.name %></div>
+<a href="#" class="js-next" data-id="<%=@bourbon.id%>">Next...</a>
+<h1 class="bourbonName"><%= @bourbon.name %></h1>
+<p class="bourbonBody"><%= @bourbon.description %></p>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-next").on("click", function() {
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.getJSON("/bourbons/" + nextId + "/bourbon_data", function(data) {
+      $(".distilleryName").text(data["distillery"]["name"]);
+      $(".bourbonName").text(data["name"]);
+      $(".bourbonBody").text(data["description"]);
+      // re-set the id to current on the link
+      $(".js-next").attr("data-id", data["id"]);
+    });
+  });
+});
+</script>
