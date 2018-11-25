@@ -18,3 +18,4 @@
 //= require jquery_ujs
 //= require_tree .
 //= require distilleries
+//= require bourbons

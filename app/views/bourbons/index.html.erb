@@ -1,4 +1,12 @@
-<h1> Bourbon Index </h1>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+   <script src="javascripts/bourbons.js" type="text/javascript>"></script>
+
+  </head>
+
+  <h1> Bourbon Index </h1>
 
 <table>
   <tr>
@@ -26,15 +34,3 @@
 </br>
 <%= link_to "Distillery Index List", distilleries_path %> </br>
 <%= link_to "Stockist Index List", stockists_path %>
-
-<script type="text/javascript" charset="utf-8">
-$(function () {
-  $(".js-more").on('click', function() {
-    var id = $(this).data("id");
-    $.getJSON("/bourbons/" + id + "/bourbon_data", function(data) {
-      // Replace text of body-id div
-      $("#body-" + id).html(data["description"]);
-    });
-  });
-});
-</script>
