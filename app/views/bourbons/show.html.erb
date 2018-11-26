@@ -1,4 +1,6 @@
 
+<a href="#" class="js-next" data-id="<%=@bourbon.id%>">Next bourbon</a>
+
 
 <h1 class="bourbonName"><%= @bourbon.name %></h1>
 <h3><div class="distilleryName"> by <%= @bourbon.distillery_name %></div> </h3>
@@ -33,7 +35,7 @@ Stockist Notes :
 <%= link_to 'All Bourbons', bourbons_path %> </br>
 
 
-<a href="#" class="js-next" data-id="<%=@bourbon.id%>">Next...</a>
+
 <script type="text/javascript" charset="utf-8">
 $(function () {
   $(".js-next").on("click", function() {
