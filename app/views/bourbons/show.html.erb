@@ -34,15 +34,12 @@ Stockist Notes :
 
 
 <a href="#" class="js-next" data-id="<%=@bourbon.id%>">Next...</a>
-
-
-
 <script type="text/javascript" charset="utf-8">
 $(function () {
   $(".js-next").on("click", function() {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
-    $.getJSON("/bourbons/" + nextId + "/bourbon_data", function(data) {
-      $(".distilleryName").text(data["distillery"]["name"]);
+    $.get("/bourbons/" + nextId + ".json", function(data) {
+
       $(".bourbonName").text(data["name"]);
       $(".bourbonDescription").text(data["description"]);
       $(".bourbonAge").text(data["age"]);
