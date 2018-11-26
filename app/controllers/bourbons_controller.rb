@@ -37,10 +37,16 @@ end
     @bourbon = Bourbon.find(params[:id])
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: @bourbon.to_json(only: [:id, :name, :description, :age])}
+      format.json { render json: @bourbon}
   end
 end
 end
+
+#BEFORE using a serializer:
+      #render json: @post.to_json(only: [:title, :description, :id],
+                                #include: [author: { only: [:name]}])
+       # AFTER USING OUR SERIALIZER
+      #render json: @post, status: 200
 
 def bourbon_data
     @bourbon = Bourbon.find(params[:id])

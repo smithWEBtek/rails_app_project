@@ -3,7 +3,7 @@
 $(function () {
   $(".js-more").on('click', function() {
     var id = $(this).data("id");
-    $.getJSON("/bourbons/" + id + "/bourbon_data", function(data) {
+    $.get("/bourbons/" + id + "/bourbon_data", function(data) {
       // Replace text of body-id div
       $("#body-" + id).html(data["description"]);
     });
@@ -16,7 +16,7 @@ $(function () {
   $(".js-next").on("click", function() {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/bourbons/" + nextId + ".json", function(data) {
-      $(".distilleryName").text(data["distillery"]["name"]);
+
       $(".bourbonName").text(data["name"]);
       $(".bourbonDescription").text(data["description"]);
       $(".bourbonAge").text(data["age"]);
