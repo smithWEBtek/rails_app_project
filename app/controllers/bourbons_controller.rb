@@ -34,7 +34,7 @@ end
         redirect_to distillery_bourbons_path(@distillery), alert: 'Bourbon not found'
       end
     else
-    @bourbon = Bourbon.find(params[:id])
+    
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @bourbon}
@@ -49,7 +49,7 @@ end
       #render json: @post, status: 200
 
 def bourbon_data
-    @bourbon = Bourbon.find(params[:id])
+
     render json: @bourbon
   end
 
