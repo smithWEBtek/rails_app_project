@@ -9,3 +9,20 @@ $(function () {
     });
   });
 });
+
+
+
+$(function () {
+  $(".js-next").on("click", function() {
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get("/bourbons/" + nextId + ".json", function(data) {
+      $(".distilleryName").text(data["distillery"]["name"]);
+      $(".bourbonName").text(data["name"]);
+      $(".bourbonDescription").text(data["description"]);
+      $(".bourbonAge").text(data["age"]);
+      $(".bourbonGrain").text(data["grain"]);
+      // re-set the id to current on the link
+      $(".js-next").attr("data-id", data["id"]);
+    });
+  });
+});

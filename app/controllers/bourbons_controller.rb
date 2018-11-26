@@ -30,14 +30,17 @@ end
     if params[:distillery_id]
       @distillery = Distillery.find_by(id: params[:distillery_id])
       @bourbon = @distillery.bourbons.find_by(id: params[:id])
-      if @bourbon.nil?
+        if @bourbon.nil?
         redirect_to distillery_bourbons_path(@distillery), alert: 'Bourbon not found'
       end
     else
     @bourbon = Bourbon.find(params[:id])
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @bourbon.to_json(only: [:id, :name, :description, :age])}
   end
 end
-
+end
 
 def bourbon_data
     @bourbon = Bourbon.find(params[:id])
