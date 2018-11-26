@@ -40,8 +40,8 @@ end
 
 
 def bourbon_data
-    bourbon = Bourbon.find(params[:id])
-    render json: BourbonSerializer.serialize(bourbon)
+    @bourbon = Bourbon.find(params[:id])
+    render json: @bourbon
   end
 
   def new
