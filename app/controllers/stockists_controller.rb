@@ -20,7 +20,7 @@ class StockistsController < ApplicationController
     if @stockist.save
       redirect_to @stockist
     else
-     render :new
+     render :index
    end
   end
 
