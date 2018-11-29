@@ -19,7 +19,7 @@ class StockistsController < ApplicationController
     @stockist = Stockist.new(stockist_params)
 
     if @stockist.save
-       redirect_to stockists_path
+       render 'stockists/single', :layout =>false
      else
        render :index
    end
