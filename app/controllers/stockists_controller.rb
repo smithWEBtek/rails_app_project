@@ -9,6 +9,7 @@ class StockistsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -19,9 +20,9 @@ class StockistsController < ApplicationController
     @stockist = Stockist.new(stockist_params)
 
     if @stockist.save
-       render 'stockists/single', :layout =>false
-     else
        render :index
+     else
+       redirect to stockists_path
    end
   end
 

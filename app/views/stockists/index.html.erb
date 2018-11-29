@@ -12,7 +12,9 @@
 <% end %>
 
 <br>
-
+<div class='stockists'>
+<li><%= @stockist.name %></br></li>
+</div>
 
 <%= form_for(@stockist) do |f| %>
 <%= f.text_area :name %>
