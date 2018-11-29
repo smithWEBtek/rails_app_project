@@ -18,7 +18,8 @@ class StockistsController < ApplicationController
   def create
     @stockist = Stockist.new(stockist_params)
     if @stockist.save
-      redirect_to stockists_path
+       redirect_to  stockists_path
+  
    end
   end
 

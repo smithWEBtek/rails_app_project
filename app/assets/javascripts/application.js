@@ -16,7 +16,8 @@
 
 //= require jquery3
 //= require jquery_ujs
-//= require_tree .
+//= require stockists
 //= require distilleries
 //= require bourbons
-//= require stockists
+
+//= require_tree .
