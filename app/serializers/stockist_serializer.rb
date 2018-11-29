@@ -1,4 +1,4 @@
 class StockistSerializer < ActiveModel::Serializer
-  attributes :id, :name
-  has_many :bourbons 
+  attributes :id, :name, :address
+  has_many :bourbons
 end

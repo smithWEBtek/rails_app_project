@@ -5,6 +5,7 @@ class StockistsController < ApplicationController
 
   def index
     @stockists = Stockist.all
+    @stockist = Stockist.new
   end
 
   def show
@@ -49,6 +50,6 @@ class StockistsController < ApplicationController
 
   def find_stockist
     @stockist = Stockist.find(params[:id])
-  end 
+  end
 
   end
