@@ -8,3 +8,9 @@
 
 <br>
 <%= link_to "Add New Stockist", new_stockist_path %>
+
+<%= form_for(@stockist) do |f| %>
+<%= f.text_area :name %>
+<%= f.text_area :address %>
+<p><%= f.submit %></p>
+<% end %>
