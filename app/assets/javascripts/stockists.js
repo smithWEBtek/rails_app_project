@@ -13,6 +13,8 @@ datatype: 'json',
 method: 'POST'
 })
 .success(function(json){
+  html = ""
+  html += "<li>" +json.name+"</li>"
 console.log(json)
 })
 .error(function(response){
