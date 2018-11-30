@@ -20,9 +20,9 @@ class StockistsController < ApplicationController
     @stockist = Stockist.new(stockist_params)
 
     if @stockist.save
-       render :index
-     else
        redirect to stockists_path
+     else
+      render :index
    end
   end
 

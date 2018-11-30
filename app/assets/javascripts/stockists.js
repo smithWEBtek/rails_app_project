@@ -1,21 +1,22 @@
 $(document).ready(function(){
 $('#new_stockist').on("submit", function(e){
-  //alert("You clicked SUBMIT!!")
-  url = this.action
-console.log(url)
+  alert("You clicked SUBMIT!!")
+  //url = this.action
 
-data = {
-  'authenticity_token': $("input[name='authenticity_token']").val(),
-  'stockist': {
-    'name': $("#stockist_name").val(),
-    'address': $("#stockist_address").val()
-  }
-};
+
+//data = {
+  //'authenticity_token': $("input[name='authenticity_token']").val(),
+  //'stockist': {
+    //'name': $("#stockist_name").val(),
+  //  'address': $("#stockist_address").val()
+//  }
+//};
  $.ajax({
-   type: "POST",
-   url: url,
-   data: data,
+   type: ($("input[name='_method']").val() || this.method),
+   url: this.action,
+   data: $(this).serialize(),
    success: function(response){
+   $("#stockists").val("");
    var $ol = $("div.stockists ol")
    $ol.append(response);
 
