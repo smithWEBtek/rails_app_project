@@ -20,11 +20,17 @@ class StockistsController < ApplicationController
     @stockist = Stockist.new(stockist_params)
 
     if @stockist.save
-       redirect to stockists_path
+      respond_to do |f|
+      f.html {redirect_to stockists_path}
+      f.json {render :json => @stockist}
+      end
      else
       render :index
    end
   end
+
+
+
 
   def edit
   end
