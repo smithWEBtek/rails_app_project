@@ -16,9 +16,9 @@ data = {
    url: url,
    data: data,
    success: function(response){
-   var $ol = $("div.comments ol")
+   var $ol = $("div.stockists ol")
    $ol.append(response);
-   
+
    }
  });
 
