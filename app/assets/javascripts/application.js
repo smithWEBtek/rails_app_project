@@ -11,11 +11,14 @@
 // about supported directives.
 //
 
-//= require turbolinks
+
 
 
 //= require jquery3
+ //= require jquery.turbolinks
 //= require jquery_ujs
+//= require turbolinks
+
 //= require stockists
 //= require distilleries
 //= require bourbons

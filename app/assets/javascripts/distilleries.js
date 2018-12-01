@@ -1,4 +1,7 @@
 
+document.addEventListener("turbolinks:load", function() {
+  //my_func();
+//})
 
 
 $(document).ready(function(){
@@ -17,5 +20,6 @@ $.get(this.href).success(function(json){
     })
 })
 e.preventDefault();
+})
 })
 })
