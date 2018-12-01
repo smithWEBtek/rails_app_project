@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'handlebars-source', '~> 4.0.12'
 gem 'active_model_serializers'
 # Use jquery as the JavaScript library
 

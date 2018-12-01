@@ -96,6 +96,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    handlebars-source (4.0.12)
     hashie (3.5.7)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
@@ -265,6 +266,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   dotenv-rails
+  handlebars-source (~> 4.0.12)
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
