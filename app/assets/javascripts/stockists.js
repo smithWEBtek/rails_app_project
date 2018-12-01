@@ -1,3 +1,19 @@
+function Stockist(attributes){
+this.name = attributes.name;
+this.id = attributes.id;
+this.address = attributes.address;
+}
+
+$(function(){
+Item.templateSource = $(“#item-template”).html()
+Item.template = Handlebars.compile(Item.templateSource);
+})
+
+Item.prototype.renderLI()
+
+
+
+
 $(document).ready(function(){
 $('#new_stockist').on("submit", function(e){
   alert("You clicked SUBMIT!!")
@@ -13,13 +29,14 @@ datatype: 'json',
 method: 'POST'
 })
 .success(function(json){
-  html = ""
-  html += "<li>" +json.name+"</li>"
-console.log(json)
+  var newstockist = new Stockist(json);
+  var stockistLi = newstockist.renderLI()
+$("ul.new-stockist")append(stockistLi)
 })
 .error(function(response){
-console.log(response)
+console.log('you broke it?')
 })
+
 })
 })
 

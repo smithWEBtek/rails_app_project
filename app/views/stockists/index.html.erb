@@ -1,5 +1,6 @@
 <head>
-
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="js/stockists.js" type="text/javascript>"></script>
 </head>
 
 <body>
@@ -20,9 +21,16 @@
 <%= f.submit :submit %>
 <% end %>
 
-<ul class="new-stockist-section">
+<ul class="new-stockist">
 </ul>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script src="js/stockists.js" type="text/javascript>"></script>
+<script id="stockist-template" type="text/x-handlebars-template">
+  <div class="name">
+    <h1>{{name}}</h1>
+    <div class="address">
+      {{address}}
+    </div>
+  </div>
+</script>
+
 </body>
