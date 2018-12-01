@@ -22,6 +22,6 @@
 //= require stockists
 //= require distilleries
 //= require bourbons
-//= require handlebars.min 
+
 
 //= require_tree .

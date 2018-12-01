@@ -1,4 +1,5 @@
-function Stockist(attributes){
+
+  function Stockist(attributes){
 this.name = attributes.name;
 this.id = attributes.id;
 this.address = attributes.address;
@@ -13,8 +14,6 @@ Stockist.template = Handlebars.compile(Stockist.templateSource);
 Stockist.prototype.renderLI = function(){
 return Stockist.template(this)
 }
-
-
 
 
 
