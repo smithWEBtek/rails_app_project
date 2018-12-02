@@ -18,26 +18,27 @@ return Stockist.template(this)
 
 
 $(document).ready(function(){
-$('#new_stockist').on("submit", function(e){
+$('form#new_stockist').on("submit", function(e){
   alert("You clicked SUBMIT!!")
   e.preventDefault()
   var $form = $(this);
-  var action = '/stockists';
+  var action = $form.attr('action');
   var params = $form.serialize();
 
   $.ajax({
 url: action,
 data: params,
-datatype: 'json',
-method: 'POST'
+dataType: 'json',
+method: "POST"
 })
+
 .success(function(json){
   var newstockist = new Stockist(json);
   var stockistLi = newstockist.renderLI()
 $('ul.new-stockist').append(stockistLi)
 })
 .error(function(response){
-console.log('you broke it?')
+console.log('you broke it?', response)
 })
 
 })
