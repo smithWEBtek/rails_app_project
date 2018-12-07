@@ -6,21 +6,19 @@
 
 <body>
 <h1> Stockists Index </h1>
-
-
-
-
 <br>
 
 
+<div id="stockist-form">
 <%= form_for(@stockist) do |f| %>
 <%= f.text_area :name %>
 <%= f.text_area :address %>
 <%= f.submit :submit %>
 <% end %>
 
-<ul class="new-stockist">
-</ul>
+<ul class="new-stockist"></ul>
+  </div>
+
 
 <script id="stockist-template" type="text/x-handlebars-template">
   <div class="name">
