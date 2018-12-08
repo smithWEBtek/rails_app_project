@@ -7,7 +7,7 @@ ruby '2.3.3'
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'jquery-rails'
-gem 'jquery-turbolinks'
+
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -35,8 +35,6 @@ gem 'active_model_serializers'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
