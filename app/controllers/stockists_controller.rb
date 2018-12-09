@@ -15,7 +15,8 @@ class StockistsController < ApplicationController
 		end
   end
 
-  def show
+	def show
+		render json: @stockist
   end
 
   def new

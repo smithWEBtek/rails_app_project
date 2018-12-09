@@ -5,15 +5,16 @@
 
 
 <div id="stockist-form">
-<%= form_for(@stockist) do |f| %>
-<%= f.text_area :name %>
-<%= f.text_area :address %>
-<%= f.submit :submit %>
-<% end %>
+	<%= form_for(@stockist) do |f| %>
+		<%= f.text_area :name %>
+		<%= f.text_area :address %>
+		<%= f.submit :submit %>
+	<% end %>
 
 <ul class="new-stockist"></ul>
-  </div>
+</div>
 
+<div id='stockist-detail'></div>
 
 <script id="stockist-template" type="text/x-handlebars-template">
   <div class="name">
@@ -26,7 +27,7 @@
 
 <div id='stockists-index'>
 	<% @stockists.each do |stockist| %>
-	<%= link_to stockist.name, url: '#', id: stockist.id %><br>
+	<%= link_to stockist.name, stockist_path(stockist), id: stockist.id %><br>
 	<% end %>
 </div>
 
