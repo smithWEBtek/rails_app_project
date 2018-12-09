@@ -4,9 +4,7 @@ $(() => {
 });
 
 function clearOutStockistsDiv() {
-	// $('ul.new-stockist').val() = ''
-	// $('ul.new-stockist').html('')
-	// $('ul.new-stockist').html = ''
+	document.getElementById('stockist-detail').innerHTML = ''
 }
 
 function listenForStockistClick(e) {
@@ -48,6 +46,7 @@ function getStockistDetails(id) {
 // }
 
 function loadStockistDetails(data) {
+	clearOutStockistsDiv()
 	let dataHTML = (`
 		<fieldset>
 			<p>${data.name}</p>
